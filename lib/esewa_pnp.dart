@@ -30,7 +30,10 @@ class ESewaResult {
   final String productName;
   final String totalAmount;
   final String message;
+  final String environment;
   final String date;
+  final String code;
+  final String merchantName;
   final String status;
   final String referenceId;
 
@@ -39,7 +42,10 @@ class ESewaResult {
     @required this.productName,
     @required this.totalAmount,
     @required this.message,
+    @required this.environment,
     @required this.date,
+    @required this.code,
+    @required this.merchantName,
     @required this.status,
     @required this.referenceId,
   });
@@ -50,7 +56,10 @@ class ESewaResult {
       productName: response["productName"],
       totalAmount: response["totalAmount"],
       message: response["message"]["successMessage"],
+      environment: response["environment"],
       date: response["transactionDetails"]["date"],
+      code: response["code"],
+       merchantName: response["merchantName"],
       status: response["transactionDetails"]["status"],
       referenceId: response["transactionDetails"]["referenceId"],
     );
@@ -63,7 +72,10 @@ class ESewaResult {
       productName: $productName,
       totalAmount: $totalAmount,
       message: $message,
+      environment: $environment,
       date: $date,
+      code: $code,
+      merchantName: $merchantName,
       status: $status,
       referenceId: $referenceId,
     }
